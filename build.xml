@@ -1,0 +1,67 @@
+?xml version = "1.0"?>
+
+<project name = "project" default = "main">
+
+<target name="main" depends="clean,test,results"/>
+
+<target name="clean">
+
+<delete>
+
+  <fileset dir="newman"/>
+
+</delete>
+
+</target>
+
+<target name="test">
+
+    
+
+<!--     <exec executable="/usr/local/bin/node"> -->
+
+  <exec executable="/Appfactory/Jenkins/tools/node-v7.10.0/bin/node">
+
+    <arg value="node_modules/newman/bin/newman.js"/>
+
+    <arg value="run"/>
+
+    <arg value="myCollection.postman_collection.json"/>
+
+    <arg value="-r"/>
+
+    <arg value="htmlextra"/>
+
+    <arg value="--reporter-htmlextra-darkTheme"/>
+
+  </exec>
+
+<echo message="Neuman Complete"/>
+
+</target>
+
+<target name="results">
+
+<mail mailhost="<INSERT YOUR SMTP SERVER HERE>" mailport="<PORT>" ssl="yes" user="<INSERT USER>" password="<PASSWORD>" subject="Postman API Testing REsults">
+
+  <from address="<REPLACE>"/>
+
+  <to address="<REPLACE>"/>
+
+  <message>App Deployment Complete. Here are the results of your Postman test.</message>
+
+  <attachments>
+
+    <fileset dir="newman">
+
+      <include name="**/my*.html"/>
+
+    </fileset>
+
+  </attachments>
+
+</mail>
+
+</target>
+
+</project>

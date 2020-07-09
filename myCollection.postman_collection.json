@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "36cf404f-71a8-499c-a438-7d2c606b1d86",
+		"name": "myCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6e69a9c7-3312-4257-842c-dff29dce7b7c",
+						"exec": [
+							"pm.variables.get(\"variable_key\");",
+							"pm.variables.get(\"variable_key\");",
+							"pm.variables.get(\"variable_key\");",
+							"",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"let jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Is this a Chuck Quote\", function () {",
+							"    ",
+							"    pm.expect(jsonData.value).to.include(\"Chuck Norris\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Host",
+						"value": "matchilling-chuck-norris-jokes-v1.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "X-RapidAPI-Key",
+						"value": "37af7f14f1msh0ebd5edeb103010p10a6bajsnb9fc393b8e7e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random",
+					"protocol": "https",
+					"host": [
+						"matchilling-chuck-norris-jokes-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6e69a9c7-3312-4257-842c-dff29dce7b7c",
+						"exec": [
+							"pm.variables.get(\"variable_key\");",
+							"pm.variables.get(\"variable_key\");",
+							"pm.variables.get(\"variable_key\");",
+							"",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"let jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Is this a Chuck Quote\", function () {",
+							"    ",
+							"    pm.expect(jsonData.value).to.include(\"Chuck Norris\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Host",
+						"value": "matchilling-chuck-norris-jokes-v1.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "X-RapidAPI-Key",
+						"value": "37af7f14f1msh0ebd5edeb103010p10a6bajsnb9fc393b8e7e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random",
+					"protocol": "https",
+					"host": [
+						"matchilling-chuck-norris-jokes-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
